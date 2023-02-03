@@ -1,12 +1,14 @@
 # ma_cross.py
 
+# codice python relativo all'articolo presente su datatrading.info
+
 import datetime
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
 from pandas_datareader.data import DataReader
-from backtest import Strategy, Portfolio
+from backtest.backtest import Strategy, Portfolio
 
 
 class MovingAverageCrossStrategy(Strategy):
@@ -83,7 +85,6 @@ class MarketOnClosePortfolio(Portfolio):
         portfolio['total'] = portfolio['cash'] + portfolio['holdings']
         portfolio['returns'] = portfolio['total'].pct_change()
         return portfolio
-
 
 
 if __name__ == "__main__":
